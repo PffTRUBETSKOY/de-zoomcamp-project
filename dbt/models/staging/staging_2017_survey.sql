@@ -1,0 +1,23 @@
+{{ config(materialized='view') }}
+
+select Professional as profession,
+    EmploymentStatus as employment,
+    Country as country,
+    FormalEducation as education,
+    MajorUndergrad as major,
+    'null' as age,
+    split(DeveloperType, ';') as dev_type,
+    YearsCodedJob as prof_code,
+    CompanySize as org_size,
+    cast(NULL as float64) as annual_salary,
+    Currency as currency,
+    split(HaveWorkedDatabase, ';') as curr_db,
+    split(WantWorkDatabase, ';') as next_db,
+    split(HaveWorkedLanguage, ';') as curr_lang,
+    split(WantWorkLanguage, ';') as next_lang,
+    array<STRING>[] as op_sys,
+    split(HaveWorkedPlatform, ';') as web_platform,
+    split(WantWorkPlatform, ';') as next_platform,
+    split(IDE, ';') as ide,
+    2017 as s_year,
+from {{ source('staging', '17_part_clust') }}

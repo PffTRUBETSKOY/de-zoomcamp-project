@@ -1,0 +1,13 @@
+version: 2
+sources:
+    - name: staging
+      database: 
+      schema: developer_survey
+
+      tables:
+        - name: 17_part_clust
+        - name: 18_part_clust
+        - name: 19_part_clust
+        - name: 20_part_clust
+        - name: 21_part_clust
+        
