@@ -22,19 +22,19 @@ Based on this data, a [dashboard](https://datastudio.google.com/reporting/13dd9b
   1.0. Modify docker-compose environment variables: 
    ``` GCP_PROJECT_ID``` and ```GCP_GCS_BUCKET```
     
-      and put your google cloud credentials to
+   and put your google cloud credentials to
    ``` /.google/credentials/google_credentials.json```
 
   1.1. Build the image (only first-time, or when there's any change in the `Dockerfile`, takes ~15 mins for the first-time):
-     ```shell
-     docker-compose build
+     ```
+   docker-compose build
      ```
    
-     or (for legacy versions)
+or (for legacy versions)
    
-     ```shell
-     docker build .
-     ```
+
+```docker build``` .
+
 
  1.2. Initialize the Airflow scheduler, DB, and other config
     ```shell
